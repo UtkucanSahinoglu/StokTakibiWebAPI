@@ -38,14 +38,16 @@ namespace StokTakibiWebAPI.ApiDbContext
                 entity.Property(e => e.CikisDepo);
                 entity.Property(e => e.CikisTarihi);
                 entity.Property(e => e.CikisMiktari);
-                //entity.HasMany
+
             });
+
             modelBuilder.Entity<YedekParcaTanimi>(entity =>
             {
                 entity.HasKey(e => e.Id);
                 entity.Property(e => e.Kodu);
                 entity.Property(e => e.Adi);
                 entity.HasOne(e => e.YedekParca).WithMany(e => e.YedekParcaTanimis).HasForeignKey(e => e.YedekParcaId);
+
             });
 
             modelBuilder.Entity<CikisYapilanAracTanimi>(entity =>
@@ -54,33 +56,8 @@ namespace StokTakibiWebAPI.ApiDbContext
                 entity.Property(e => e.Marka);
                 entity.Property(e => e.Plaka);
                 entity.HasOne(e => e.YedekParca).WithMany(e => e.CikisYapilanAracTanimis).HasForeignKey(e => e.YedekParcaId);
+
             });
-
-            //modelBuilder.Entity<YedekParcaGirisKaydi>(entity =>
-            //{
-            //    entity.HasKey(e => e.Id);
-            //    entity.Property(e => e.GirisMiktari);
-            //    entity.Property(e => e.GirisTarihi);
-            //    entity.Property(e => e.GirisBelgeNumarasi);
-            //    entity.Property(e => e.SatinAlinanFirma);
-            //    entity.Property(e => e.SeriNumarasi);
-            //    entity.Property(e => e.GirisMiktari);
-            //    entity.Property(e => e.Birimi);
-            //    entity.HasMany(e => e.Addresses).WithOne(e => e.user).OnDelete(DeleteBehavior.Cascade);
-            //    entity.HasMany(e => e.Addresses).WithOne(e => e.user).HasForeignKey(e => e.UserId);
-            //});
-
-            //modelBuilder.Entity<YedekParcaCikisKaydi>(entity =>
-            //{
-            //    entity.HasKey(e => e.Id);
-            //    entity.Property(e => e.CikisDepo);
-            //    entity.Property(e => e.CikisTarihi);
-            //    entity.Property(e => e.SeriNumarasi);
-            //    entity.Property(e => e.CikisMiktari);
-            //    entity.Property(e => e.Birimi);
-            //    entity.HasOne(e => e.user).WithMany(e => e.Addresses).OnDelete(DeleteBehavior.ClientCascade);
-            //    entity.HasOne(e => e.user).WithMany(e => e.Addresses).HasForeignKey(e => e.UserId);
-            //});
         }
     }
 }
