@@ -17,7 +17,13 @@ namespace StokTakibiWebAPI
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
+             Host.CreateDefaultBuilder(args)
+                .ConfigureLogging(configureLogging =>
+                {
+                    configureLogging.ClearProviders();
+                    configureLogging.AddConsole();
+                    configureLogging.AddDebug();
+                })
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
