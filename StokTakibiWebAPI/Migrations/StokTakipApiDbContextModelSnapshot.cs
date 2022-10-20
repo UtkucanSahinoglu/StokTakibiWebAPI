@@ -59,8 +59,8 @@ namespace StokTakibiWebAPI.Migrations
                     b.Property<int>("CikisMiktari")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("CikisTarihi")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("CikisTarihi")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("GirisBelgeNumarasi")
                         .HasColumnType("nvarchar(max)");
@@ -71,8 +71,8 @@ namespace StokTakibiWebAPI.Migrations
                     b.Property<int>("GirisMiktari")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("GirisTarihi")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("GirisTarihi")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("SatinAlinanFirma")
                         .HasColumnType("nvarchar(max)");

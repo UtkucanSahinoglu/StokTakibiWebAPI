@@ -10,8 +10,8 @@ using StokTakibiWebAPI.ApiDbContext;
 namespace StokTakibiWebAPI.Migrations
 {
     [DbContext(typeof(StokTakipApiDbContext))]
-    [Migration("20221018233356_model_added")]
-    partial class model_added
+    [Migration("20221020141910_ModelDbIlkMigration")]
+    partial class ModelDbIlkMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -61,8 +61,8 @@ namespace StokTakibiWebAPI.Migrations
                     b.Property<int>("CikisMiktari")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("CikisTarihi")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("CikisTarihi")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("GirisBelgeNumarasi")
                         .HasColumnType("nvarchar(max)");
@@ -73,8 +73,8 @@ namespace StokTakibiWebAPI.Migrations
                     b.Property<int>("GirisMiktari")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("GirisTarihi")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("GirisTarihi")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("SatinAlinanFirma")
                         .HasColumnType("nvarchar(max)");

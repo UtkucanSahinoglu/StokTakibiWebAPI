@@ -7,10 +7,17 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using StokTakibiWebAPI.ApiDbContext;
+using StokTakibiWebAPI.Configuretion;
+using StokTakibiWebAPI.Repository.Interface;
+using StokTakibiWebAPI.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using StokTakibiWebAPI.Model;
+using StokTakibiWebAPI.Service.Interface;
+using StokTakibiWebAPI.Service;
 
 namespace StokTakibiWebAPI
 {
@@ -33,6 +40,13 @@ namespace StokTakibiWebAPI
                            .AllowAnyOrigin()
                            .AllowAnyHeader()
                            .AllowAnyMethod()));
+
+            services.AddScoped<StokTakipApiDbContext>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+            services.AddScoped(typeof(IGenericRepository<YedekParca>), typeof(GenericRepository<YedekParca>));
+            services.AddScoped<IYedekParcaRepository, YedekParcaRepository>();
+            services.AddScoped<IYedekParcaService, YedekParcaService>();
 
             ConfigureSwagger(services);
         }

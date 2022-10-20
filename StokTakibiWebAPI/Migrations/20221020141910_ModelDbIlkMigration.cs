@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace StokTakibiWebAPI.Migrations
 {
-    public partial class model_added : Migration
+    public partial class ModelDbIlkMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -13,14 +13,14 @@ namespace StokTakibiWebAPI.Migrations
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     GirisDepo = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    GirisTarihi = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    GirisTarihi = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     GirisBelgeNumarasi = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     SatinAlinanFirma = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     SeriNumarasi = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     GirisMiktari = table.Column<int>(type: "int", nullable: false),
                     Birimi = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CikisDepo = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CikisTarihi = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CikisTarihi = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CikisMiktari = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
