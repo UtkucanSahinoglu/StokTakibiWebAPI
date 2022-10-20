@@ -31,13 +31,13 @@ namespace StokTakibiWebAPI.Repository
             return result;
         }
 
-        public async Task<IEnumerable<YedekParca>> GetByHareketRaporu(Guid Id)
+        public async Task<IEnumerable<YedekParca>> GetByHareketRaporu(int Id)
         {
             var result = await _context.YedekParca.Where(x => x.Id == Id).ToListAsync();
             return result;
         }
 
-        public async Task<YedekParca> GetById(Guid Id)
+        public async Task<YedekParca> GetById(int Id)
         {
 
             var result = await _context.YedekParca.SingleAsync(x => x.Id == Id);

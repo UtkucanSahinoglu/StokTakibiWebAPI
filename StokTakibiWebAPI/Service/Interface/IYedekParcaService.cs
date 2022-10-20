@@ -10,9 +10,9 @@ namespace StokTakibiWebAPI.Service.Interface
         Task<IEnumerable<YedekParca>> GetAll();
         void Add(YedekParca yedekParca);
         void Update(YedekParca yedekParca);
-        Task<YedekParca> GetById(Guid Id);
+        Task<YedekParca> GetById(int Id);
         Task<IEnumerable<YedekParca>> GetBySeriNumarasi(string SeriNumarasi);
-        Task<IEnumerable<YedekParca>> GetByHareketRaporu(Guid Id);
+        Task<IEnumerable<YedekParca>> GetByHareketRaporu(int Id);
         Task<IEnumerable<CikisYapilanAracTanimi>> GetByAracBazindaParcaRaporu(string Plaka);
 
     }

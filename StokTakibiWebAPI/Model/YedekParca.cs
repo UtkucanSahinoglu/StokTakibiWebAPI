@@ -6,7 +6,7 @@ namespace StokTakibiWebAPI.Model
 {
     public class YedekParca
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public string GirisDepo { get; set; }
         public string GirisTarihi { get; set; }
         public string GirisBelgeNumarasi { get; set; }

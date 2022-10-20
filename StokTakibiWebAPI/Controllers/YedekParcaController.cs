@@ -59,7 +59,7 @@ namespace StokTakibiWebAPI.Controllers
             return await _yedekParcaService.GetByAracBazindaParcaRaporu(Plaka);
         }
         [HttpGet("GetByHareketRaporu")]
-        public async Task<IEnumerable<YedekParca>> GetByHareketRaporu(Guid Id)
+        public async Task<IEnumerable<YedekParca>> GetByHareketRaporu(int Id)
         {
             _logger.LogInformation("GetByHareketRaporu method is called");
             return await _yedekParcaService.GetByHareketRaporu(Id);

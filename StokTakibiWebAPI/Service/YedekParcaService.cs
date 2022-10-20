@@ -48,12 +48,12 @@ namespace StokTakibiWebAPI.Service
             return await _yedekParcaRepository.GetByAracBazindaParcaRaporu(Plaka);
         }
 
-        public async Task<IEnumerable<YedekParca>> GetByHareketRaporu(Guid Id)
+        public async Task<IEnumerable<YedekParca>> GetByHareketRaporu(int Id)
         {
             return await _yedekParcaRepository.GetByHareketRaporu(Id);
         }
 
-        public async Task<YedekParca> GetById(Guid Id)
+        public async Task<YedekParca> GetById(int Id)
         {
             return await _yedekParcaRepository.GetById(Id);
         }

@@ -6,8 +6,8 @@ namespace StokTakibiWebAPI.Model
 {
     public class CikisYapilanAracTanimi
     {
-        public Guid Id { get; set; }
-        public Guid YedekParcaId { get; set; }
+        public int Id { get; set; }
+        public int YedekParcaId { get; set; }
         public string Plaka { get; set; }
         public string Marka { get; set; }
         public string Model { get; set; }

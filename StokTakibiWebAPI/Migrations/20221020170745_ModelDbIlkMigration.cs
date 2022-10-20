@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace StokTakibiWebAPI.Migrations
 {
@@ -11,7 +10,8 @@ namespace StokTakibiWebAPI.Migrations
                 name: "YedekParca",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     GirisDepo = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     GirisTarihi = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     GirisBelgeNumarasi = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -32,8 +32,9 @@ namespace StokTakibiWebAPI.Migrations
                 name: "CikisYapilanAracTanimi",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    YedekParcaId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    YedekParcaId = table.Column<int>(type: "int", nullable: false),
                     Plaka = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Marka = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Model = table.Column<string>(type: "nvarchar(max)", nullable: true)
@@ -53,8 +54,9 @@ namespace StokTakibiWebAPI.Migrations
                 name: "YedekParcaTanimi",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    YedekParcaId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    YedekParcaId = table.Column<int>(type: "int", nullable: false),
                     Kodu = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Adi = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
